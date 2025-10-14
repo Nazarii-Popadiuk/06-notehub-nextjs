@@ -1,7 +1,7 @@
 import axios from "axios"
 import type { Note } from "../types/note";
 
-const API_URL = 'https://next-docs-api.onrender.com'
+const API_URL = 'https://notehub-public.goit.study/api/notes'
 
 const token = process.env.NEXT_PUBLIC_NOTEHUB_TOKEN;
 
