@@ -15,9 +15,9 @@ export default function Pagination({ pageCount, currentPage, onPageChange }: Pag
           <ReactPaginate
             breakLabel="..."
             nextLabel=">"
-            onPageChange={(selected: SelectedPage) => onPageChange(selected.selected)}
+            onPageChange={(selected: SelectedPage) => onPageChange(selected.selected + 1)}
             pageRangeDisplayed={5}
-            forcePage={currentPage}
+            forcePage={currentPage - 1}
             marginPagesDisplayed={12}
             pageCount={pageCount}
             previousLabel="<"
