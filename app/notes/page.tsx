@@ -26,6 +26,7 @@ export default function App() {
         queryKey: ['notes', debouncedSearch, currentPage - 1],
         queryFn: () => fetchNotes(debouncedSearch, currentPage),
         placeholderData: keepPreviousData,
+    
     });
 
     useEffect(() => {
