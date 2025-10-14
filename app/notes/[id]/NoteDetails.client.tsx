@@ -6,11 +6,14 @@ import { fetchNoteById } from "@/lib/api";
 import styles from "./NoteDetails.module.css"
 
 const NoteDetailsClient = () => {
-    const { id } = useParams<{ id: string }>();
+  const params = useParams();
+  const idParam = params?.id;
+
+  const noteId = Number(idParam);
 
   const { data: note, isLoading, error } = useQuery({
-    queryKey: ["note", id],
-    queryFn: () => fetchNoteById(id),
+    queryKey: ["note", noteId],
+    queryFn: () => fetchNoteById(noteId),
     refetchOnMount: false,
   });
 

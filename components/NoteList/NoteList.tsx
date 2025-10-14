@@ -32,7 +32,7 @@ export default function NoteList({ notes }: NoteListProps) {
           <p className={styles.content}>{note.content}</p>
           <div className={styles.footer}>
             <span className={styles.tag}>{note.tag}</span>
-            <Link href="`/notes/${note.id}`">View details</Link>
+            <Link href="`/app/notes/${note.id}`">View details</Link>
             <button className={styles.button} onClick={() => mutate(note.id)} disabled={isPending && deletingId === note.id}>{isPending && deletingId === note.id ? 'Deleting...' : 'Delete'}</button>
           </div>
         </li>
