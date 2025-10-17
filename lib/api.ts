@@ -10,13 +10,13 @@ interface FetchNotesProps {
     totalPages: number
 }
 
-export const fetchNotes = async (search: string, page: number = 1, perPage: number = 12):Promise <FetchNotesProps> => {
+export const fetchNotes = async (search: string, page: number = 1):Promise <FetchNotesProps> => {
 
     const response = await axios.get<FetchNotesProps>(API_URL, {
         params: {
             search,
             page,
-            perPage
+            
         },
         headers: {
         Authorization: `Bearer ${token}`
@@ -47,7 +47,7 @@ export const deleteNote = async (id: string): Promise<Note> => {
     return response.data
 }
 
-export const fetchNoteById = async (id: number) => {
-    const res = await axios.get<Note>(`/notes/${id}`)
+export const fetchNoteById = async (id: string): Promise<Note> => {
+    const res = await axios.get<Note>(`${API_URL}/notes/${id}`)
     return res.data
 }
