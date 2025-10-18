@@ -24,10 +24,10 @@ const NoteDetailsClient = () => {
     <div className={styles.container}>
 	<div className={styles.item}>
 	  <div className={styles.header}>
-          <h2>${note.title}</h2>
+          <h2>{note.title}</h2>
 	  </div>
-        <p className={styles.content}>${note.content}</p>
-        <p className={styles.date}>${note.createdAt}</p>
+        <p className={styles.content}>{note.content}</p>
+        <p className={styles.date}>{note.createdAt}</p>
 	</div>
 </div>
 
